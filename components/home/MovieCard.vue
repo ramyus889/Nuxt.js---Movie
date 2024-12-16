@@ -3,10 +3,25 @@
     <v-col
       v-for="movie in moviesStore.movies?.results"
       :key="movie.id"
-      cols="3"
+      cols="12"
+      sm="6"
+      md="3"
+      xl="3"
     >
-      <v-card rounded="lg" class="" color="#020617">
+      <v-card
+        rounded="lg"
+        class="cursor-pointer"
+        color="#020617"
+        @click="$router.push(`/${movie.id}`)"
+      >
+        <div
+          v-if="movie.poster_path === null"
+          class="flex place-content-center align-center h-[636px]"
+        >
+          <v-icon size="240">mdi-image-off</v-icon>
+        </div>
         <v-img
+          v-else
           :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`"
           rounded="lg"
         >

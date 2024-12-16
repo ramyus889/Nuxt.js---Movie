@@ -22,10 +22,10 @@ const bgColor = computed(() => {
     <v-progress-circular
       :model-value="score * 10"
       :color="color"
-      size="42"
+      size="60"
       width="5"
       :bg-color="bgColor"
-      ><p class="text-black font-weight-bold text-[14px]">
+      ><p class="text-black font-weight-bold text-[20px]">
         {{ score?.toFixed(1) }}
       </p></v-progress-circular
     >
@@ -35,11 +35,9 @@ const bgColor = computed(() => {
 <style scoped>
 .circle {
   border-radius: 50%;
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
   background-color: #fff;
-  bottom: 67px;
-  left: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
