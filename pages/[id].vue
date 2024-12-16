@@ -21,7 +21,7 @@
     </div>
     <div v-else class="mb-10">
       <v-row class="mt-5">
-        <v-col cols="6">
+        <v-col cols="12" xl="6" class="">
           <div
             v-if="movie?.backdrop_path === null"
             class="flex place-content-center align-center h-[490px]"
@@ -35,7 +35,7 @@
           ></v-img>
         </v-col>
 
-        <v-col cols="6">
+        <v-col cols="12" xl="6">
           <div class="text-h4 mt-8 mb-1">{{ movie?.title }}</div>
           <p class="text-grey">
             {{ movie?.release_date }} - {{ movie?.runtime }} -
@@ -59,8 +59,10 @@
       <p class="text-h4 my-5">Cast</p>
 
       <v-row>
-        <v-col class="flex place-content-center">
-          <div class="inline-grid grid-cols-4 gap-5">
+        <v-col class="flex place-content-center" cols="12" xl="6">
+          <div
+            class="inline-grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5"
+          >
             <v-card
               v-for="(card, index) in movie?.cast"
               :key="index"
@@ -85,7 +87,7 @@
           </div>
         </v-col>
 
-        <v-col>
+        <v-col cols="12" xl="6">
           <div
             v-if="movie?.movieSrc === null"
             class="flex justify-center align-center"
